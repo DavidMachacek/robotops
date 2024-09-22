@@ -1,0 +1,12 @@
+apiVersion: robotops.cloudhub.cz/v1
+kind: Bootstrap
+metadata:
+  labels:
+    app.kubernetes.io/name: robotops
+    app.kubernetes.io/managed-by: kustomize
+  name: bootstrap-sample
+  namespace: robotops-system
+spec:
+  pod:
+    image: davidmachacek/informer:v1
+    name: informer

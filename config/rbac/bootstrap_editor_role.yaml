@@ -1,0 +1,27 @@
+# permissions for end users to edit bootstraps.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: robotops
+    app.kubernetes.io/managed-by: kustomize
+  name: bootstrap-editor-role
+rules:
+- apiGroups:
+  - robotops.cloudhub.cz
+  resources:
+  - bootstraps
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - robotops.cloudhub.cz
+  resources:
+  - bootstraps/status
+  verbs:
+  - get
